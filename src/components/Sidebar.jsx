@@ -29,7 +29,7 @@ const Sidebar = () => {
       </div>
       <ul className="menu">
         <li>
-          <Link to="/">🏦 {!collapsed && "Dashboard"}</Link>
+          <Link to="/dashboard">🏦 {!collapsed && "Dashboard"}</Link>
         </li>
         <li>
           <Link to="/Transactions">📥 {!collapsed && "Transactions"}</Link>
