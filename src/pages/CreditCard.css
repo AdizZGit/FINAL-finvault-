@@ -1,42 +1,41 @@
 .admin-container {
-    padding: 20px;
-    font-family: Arial, sans-serif;
-  }
-  
-  .approval-table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  .approval-table th,
-  .approval-table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-  }
-  
-  .approval-table th {
-    background-color: #f4f4f4;
-    text-align: left;
-  }
-  
-  .approval-table td {
-    text-align: center;
-  }
-  
-  .approve-btn {
-    margin-right: 10px;
-    padding: 5px 10px;
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .reject-btn {
-    padding: 5px 10px;
-    background-color: #f44336;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.approval-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.approval-table th,
+.approval-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.approval-table th {
+  background-color: #f4f4f4;
+  text-align: left;
+}
+
+.approval-table td {
+  text-align: center;
+}
+
+.approve-btn {
+  margin-right: 10px;
+  padding: 5px 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.reject-btn {
+  padding: 5px 10px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  cursor: pointer;
+}

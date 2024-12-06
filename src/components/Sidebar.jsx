@@ -44,7 +44,7 @@ const Sidebar = () => {
           <Link to="">💸 {!collapsed && "Contacts Info"}</Link>
         </li>
         <li>
-          <Link to="/Investments">💰 {!collapsed && "Credit Card"}</Link>
+          <Link to="/CreditCard">💰 {!collapsed && "CreditCard"}</Link>
         </li>
       </ul>
     </div>
