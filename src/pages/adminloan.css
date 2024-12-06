@@ -1,0 +1,140 @@
+.admin-loan-page {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .admin-loan-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 14px;
+  }
+  
+  .admin-loan-table th,
+  .admin-loan-table td {
+    border: 1px solid #ddd;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .admin-loan-table th {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .admin-loan-table tbody tr {
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .admin-loan-table tbody tr:hover {
+    background-color: #f1f1f1;
+    transform: scale(1.02);
+    cursor: pointer;
+  }
+  
+  .admin-loan-table td {
+    color: #555;
+  }
+  
+  .admin-loan-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .admin-loan-table tbody tr:nth-child(odd) {
+    background-color: #fff;
+  }
+  /* Style for the buttons */
+.approve-btn, .reject-btn {
+  padding: 8px 16px;
+  margin: 5px;
+  border: none;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.approve-btn {
+  background-color: #4CAF50; /* Green for approve */
+}
+
+.reject-btn {
+  background-color: #f44336; /* Red for reject */
+}
+
+.approve-btn:hover {
+  background-color: #45a049; /* Darker green on hover */
+  transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+.reject-btn:hover {
+  background-color: #e53935; /* Darker red on hover */
+  transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+/* Responsive adjustments for buttons */
+@media screen and (max-width: 768px) {
+  .approve-btn, .reject-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .approve-btn, .reject-btn {
+    padding: 5px 10px;
+    font-size: 10px;
+  }
+}
+  /* Responsive Design */
+  @media screen and (max-width: 768px) {
+    .admin-loan-page {
+      padding: 10px;
+    }
+  
+    .admin-loan-table th,
+    .admin-loan-table td {
+      font-size: 12px;
+      padding: 8px;
+    }
+  
+    h1 {
+      font-size: 20px;
+    }
+  }
+  
+  @media screen and (max-width: 576px) {
+    .admin-loan-table th,
+    .admin-loan-table td {
+      font-size: 10px;
+      padding: 5px;
+    }
+  
+    h1 {
+      font-size: 18px;
+    }
+  
+    /* Scrollable Table for Small Screens */
+    .admin-loan-table {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+  
+    .admin-loan-table tbody tr:hover {
+      transform: none;
+    }
+  }
+  
