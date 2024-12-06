@@ -29,7 +29,7 @@ const Sidebar = () => {
       </div>
       <ul className="menu">
         <li>
-          <Link to="/">🏦 {!collapsed && "Dashboard"}</Link>
+          <Link to="/dashboard">🏦 {!collapsed && "Dashboard"}</Link>
         </li>
         <li>
           <Link to="/Transactions">📥 {!collapsed && "Transactions"}</Link>
@@ -44,7 +44,7 @@ const Sidebar = () => {
           <Link to="">💸 {!collapsed && "Contacts Info"}</Link>
         </li>
         <li>
-          <Link to="/Investments">💰 {!collapsed && "Credit Card"}</Link>
+          <Link to="/CreditCard">💰 {!collapsed && "CreditCard"}</Link>
         </li>
       </ul>
     </div>

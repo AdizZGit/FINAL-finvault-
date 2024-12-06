@@ -1,5 +1,7 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import SignIn from "./pages/SignIn";
+import SignUp from "./pages/SignUp";
 import Sidebar from "./components/Sidebar";
 import Topbar from "./components/Topbar";
 import Dashboard from "./pages/Dashboard";
@@ -8,26 +10,37 @@ import Accounts from "./pages/Accounts";
 import "./styles.css";
 import AdminLoanPage from "./pages/adminloan";
 
-
 const App = () => {
   return (
     <Router>
-      <div className="app">
-        <Sidebar />
-        <div className="main-content">
-          <Topbar />
-          <div className="content">
-            <Routes>
-              <Route path="/" element={<Dashboard />} />
-              <Route path="/accounts" element={<Accounts />} />
-              <Route path="/contacts" element={<div>Contacts Info Page</div>} />
-              <Route path="/credit-card" element={<CreditCard />} />
-              <Route path="/adminloan" element={<AdminLoanPage />} />
-            
-            </Routes>
-          </div>
-        </div>
-      </div>
+      <Routes>
+        {/* Redirect root path to /signin */}
+        <Route path="/" element={<Navigate to="/signin" />} />
+        <Route path="/signin" element={<SignIn />} />
+        <Route path="/signup" element={<SignUp />} />
+        
+        {/* Main application layout */}
+        <Route
+          path="*"
+          element={
+            <div className="app">
+              <Sidebar />
+              <div className="main-content">
+                <Topbar />
+                <div className="content">
+                  <Routes>
+                    <Route path="/dashboard" element={<Dashboard />} />
+                    <Route path="/accounts" element={<Accounts />} />
+                    <Route path="/contacts" element={<div>Contacts Info Page</div>} />
+                    <Route path="/creditcard" element={<CreditCard />} />
+                    <Route path="/adminloan" element={<AdminLoanPage />} />
+                  </Routes>
+                </div>
+              </div>
+            </div>
+          }
+        />
+      </Routes>
     </Router>
   );
 };
