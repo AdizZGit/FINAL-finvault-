@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Table, Button, Form, Modal, Card } from 'react-bootstrap';
-// import MoneyTransfer from './components/MoneyTransfer';
 import MoneyTransfer from '../components/MoneyTransfer';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const Transactions = () => {
   const [showModal, setShowModal] = useState(false);
