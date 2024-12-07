@@ -53,9 +53,9 @@ export default function CreditCard() {
                 <td>{app.creditScore}</td>
                 <td>{app.status}</td>
                 <td>
-                  <button className="btn btn-success btn-sm me-2">Approve</button>
-                  <button className="btn btn-danger btn-sm me-2">Reject</button>
-                  <button className="btn btn-primary btn-sm">Send Message</button>
+                  <button className="btn btn-success me-2">Approve</button>
+                  <button className="btn btn-danger  me-2">Reject</button>
+                  <button className="btn btn-primary ">Send Message</button>
                 </td>
               </tr>
             ))}
