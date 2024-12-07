@@ -9,20 +9,55 @@ const MoneyTransfer = () => {
     transferNote: "",
   });
 
+  const [errors, setErrors] = useState({});
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+    setErrors({ ...errors, [name]: "" }); 
+  };
+
+  const validateForm = () => {
+    const newErrors = {};
+    const accountNumberRegex = /^\d{10,12}$/; // Account number must be 10 to 12 digits
+
+    if (!accountNumberRegex.test(formData.senderAccount)) {
+      newErrors.senderAccount = "Sender's account number must be 10 to 12 digits.";
+    }
+
+    if (!accountNumberRegex.test(formData.recipientAccount)) {
+      newErrors.recipientAccount = "Recipient's account number must be 10 to 12 digits.";
+    }
+
+    if (formData.senderAccount === formData.recipientAccount) {
+      newErrors.recipientAccount = "Recipient's account number must be different from sender's.";
+    }
+
+    if (!formData.amount || parseFloat(formData.amount) <= 0) {
+      newErrors.amount = "Amount must be greater than zero.";
+    }
+
+    return newErrors;
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Transaction of ₹₹{formData.amount} to account ₹{formData.recipientAccount} initiated successfully!`);
+    const newErrors = validateForm();
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
+    }
+
+    alert(`Transaction of ₹${formData.amount} to account ${formData.recipientAccount} initiated successfully!`);
+
     setFormData({
       senderAccount: "",
       recipientAccount: "",
       amount: "",
       transferNote: "",
     });
+    setErrors({});
   };
 
   return (
@@ -41,6 +76,7 @@ const MoneyTransfer = () => {
             placeholder="Enter sender's account number"
             required
           />
+          {errors.senderAccount && <p className="text-danger">{errors.senderAccount}</p>}
         </div>
 
         <div className="form-group">
@@ -55,6 +91,7 @@ const MoneyTransfer = () => {
             placeholder="Enter recipient's account number"
             required
           />
+          {errors.recipientAccount && <p className="text-danger">{errors.recipientAccount}</p>}
         </div>
 
         <div className="form-group">
@@ -69,6 +106,7 @@ const MoneyTransfer = () => {
             placeholder="Enter amount to transfer"
             required
           />
+          {errors.amount && <p className="text-danger">{errors.amount}</p>}
         </div>
 
         <div className="form-group">
