@@ -11,6 +11,7 @@ import "./styles.css";
 import AdminLoanPage from "./pages/adminloan";
 import AdminAccounts from "./pages/AdminAccounts";
 import Transactions from "./pages/Transactions";
+import AdminTransactions from "./pages/AdminTransactions";
 
 const App = () => {
   return (
@@ -38,6 +39,7 @@ const App = () => {
                     <Route path="/creditcard" element={<CreditCard />} />
                     <Route path="/adminloan" element={<AdminLoanPage />} />
                     <Route path="/Transactions" element={<Transactions />} />
+                    <Route path="/admin/Transactions" element={<AdminTransactions />} />
                   </Routes>
                 </div>
               </div>
