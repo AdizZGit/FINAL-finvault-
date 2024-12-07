@@ -9,7 +9,6 @@ import CreditCard from "./pages/CreditCard";
 // import Accounts from "./pages/Accounts";
 import "./styles.css";
 import AdminLoanPage from "./pages/adminloan";
-import AdminAccounts from "./pages/AdminAccounts";
 
 const App = () => {
   return (
@@ -31,7 +30,7 @@ const App = () => {
                 <div className="content">
                   <Routes>
                     <Route path="/dashboard" element={<Dashboard />} />
-                    <Route path="/adminaccounts" element={<AdminAccounts />} />
+                    <Route path="/accounts" element={<Accounts />} />
                     <Route path="/contacts" element={<div>Contacts Info Page</div>} />
                     <Route path="/creditcard" element={<CreditCard />} />
                     <Route path="/adminloan" element={<AdminLoanPage />} />
