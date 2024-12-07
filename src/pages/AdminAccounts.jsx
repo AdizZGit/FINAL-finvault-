@@ -25,7 +25,7 @@ const AdminAccounts = () => {
       accountNumber: "4567 **** **** 8901",
       balance: 25000,
       type: "Business",
-      recentActivity: "Transfer $1,000 on 28 Nov 2024",
+      recentActivity: "Transfer ₹1,000 on 28 Nov 2024",
     },
   ]);
   const [searchTerm, setSearchTerm] = useState("");
@@ -88,7 +88,7 @@ const AdminAccounts = () => {
               <tr key={account.id}>
                 <td>{account.name}</td>
                 <td>{account.accountNumber}</td>
-                <td>${account.balance.toLocaleString()}</td>
+                <td>₹{account.balance.toLocaleString()}</td>
                 <td>{account.type}</td>
                 <td>{account.recentActivity}</td>
                 <td>

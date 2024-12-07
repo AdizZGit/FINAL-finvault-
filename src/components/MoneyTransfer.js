@@ -16,7 +16,7 @@ const MoneyTransfer = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Transaction of $${formData.amount} to account ${formData.recipientAccount} initiated successfully!`);
+    alert(`Transaction of ₹₹{formData.amount} to account ₹{formData.recipientAccount} initiated successfully!`);
     setFormData({
       senderAccount: "",
       recipientAccount: "",
