@@ -1,0 +1,190 @@
+/* General Styles */
+.loan-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: left; /* Align text to the left for better readability */
+  min-width: 200px;
+  box-sizing: border-box;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for scaling and shadow change */
+}
+
+.loans-container h2 {
+  font-size: 30px;
+}
+
+.loan-card:hover {
+  transform: translateY(-5px); /* Lift the card slightly */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Make the shadow stronger on hover */
+}
+
+.loan-card h3 {
+  font-size: 22px; /* Slightly bigger heading */
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.loan-card p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+/* Loan Summary Section */
+.loan-summary {
+  display: flex;
+  flex-direction: column; /* Stack cards vertically */
+  gap: 20px; /* Add equal spacing between cards */
+  margin-bottom: 20px;
+}
+
+/* Repay Button */
+.repay-btn, .repay-btn2 {
+  padding: 7px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  display: block;  /* Make button a block element */
+  margin: 20px auto 0;  /* Auto margin on left and right to center it */
+  font-size: 16px;
+  text-align: center;
+}
+
+.repay-btn a {
+  color: white;  /* Ensure the Link text is also white */
+  text-decoration: none;  /* Remove text decoration (underline) */
+}
+
+.repay-btn:hover {
+  background: #0056b3;  /* Darker shade on hover for better UX */
+}
+
+/* Active Loans Table */
+.active-loans {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.active-loans h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead th {
+  text-align: left;
+  padding: 10px 15px;
+  background: #f4f4f4;
+}
+
+tbody td,
+tfoot td {
+  padding: 10px 15px;
+  border-bottom: 1px solid #eee;
+}
+
+tfoot tr {
+  font-weight: bold;
+}
+
+.active-loans table tbody tr:hover {
+  background-color: #f1f1f1; /* Light gray background on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+  transition: transform 0.2s ease, background-color 0.2s ease; /* Smooth transition */
+}
+
+.active-loans:hover {
+  transform: translateY(-5px); /* Slight lift effect on the entire table */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Stronger shadow when hovering */
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 1200px) {
+  .loan-summary {
+    flex-direction: column; /* Ensure it stays vertically stacked */
+    gap: 15px;
+  }
+
+  .loan-card {
+    min-width: 220px;
+  }
+}
+
+/* Adjustments for tablets and smaller screens */
+@media screen and (max-width: 768px) {
+  .loans-container {
+    left: 50px;
+    width: calc(100% - 50px);
+  }
+
+  .loan-card {
+    min-width: 250px;
+  }
+
+  .loan-summary {
+    gap: 10px;
+  }
+
+  /* Repay Button Full Width */
+  .repay-btn, .repay-btn2 {
+    width: 100%;
+    padding: 10px;
+  }
+
+  /* Active Loans Table Responsive */
+  .active-loans table {
+    width: 100%;
+    overflow-x: auto;
+    display: block;
+  }
+
+  .active-loans table thead, .active-loans table tbody, .active-loans table tfoot {
+    display: block;
+  }
+
+  .active-loans table tbody tr {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+/* Adjustments for smaller screens (mobile) */
+@media screen and (max-width: 480px) {
+  .loans-container {
+    left: 0;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .loan-card {
+    min-width: 200px;
+    padding: 10px;
+  }
+
+  .loan-summary {
+    gap: 8px;
+  }
+
+  /* Make sure buttons are centered and full width */
+  .repay-btn, .repay-btn2 {
+    width: 100%;
+    padding: 10px;
+  }
+
+  /* Ensure table has scroll */
+  .active-loans table {
+    overflow-x: auto;
+    display: block;
+  }
+}
