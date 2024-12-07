@@ -107,7 +107,8 @@ const Transactions = () => {
                 <tr key={transaction.id}>
                   <td>{transaction.id}</td>
                   <td>{transaction.name}</td>
-                  <td>{`₹₹{transaction.amount.toLocaleString()}`}</td>
+                  <td>{`₹${transaction.amount.toLocaleString()}`}</td>
+                  
                   <td className={transaction.status === 'Completed' ? 'text-success' : 'text-danger'}>
                     {transaction.status}
                   </td>
