@@ -2,28 +2,6 @@ import React, { useState } from "react";
 import "./UserCredit.css";
 
 export default function UserCredit() {
-  const [cards, setCards] = useState([]);
-  const [cardDetails, setCardDetails] = useState({
-    cardType: "",
-    nameOnCard: "",
-    expiryDate: "",
-  });
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setCardDetails({ ...cardDetails, [name]: value });
-  };
-
-  const handleAddCard = (e) => {
-    e.preventDefault();
-    if (!cardDetails.cardType || !cardDetails.nameOnCard || !cardDetails.expiryDate) {
-      alert("Please fill out all fields.");
-      return;
-    }
-    setCards([...cards, cardDetails]);
-    setCardDetails({ cardType: "", nameOnCard: "", expiryDate: "" });
-  };
-
   return (
     <div className="user-credit-container">
       <header className="header">
