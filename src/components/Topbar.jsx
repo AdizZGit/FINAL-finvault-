@@ -1,15 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom"; // Removed 'useNavigate'
 import "../styles.css"; // Ensure the correct path to your styles.css
 
 const Topbar = ({ onLogout }) => {
-  const [darkMode, setDarkMode] = useState(false);
-
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-    document.documentElement.classList.toggle("dark"); // Toggle a class on the <html> tag for dark mode
-  };
-
   const handleLogout = () => {
     if (onLogout) {
       onLogout(); // Call logout logic passed as a prop
@@ -27,9 +20,6 @@ const Topbar = ({ onLogout }) => {
 
       {/* Topbar Icons */}
       <div className="topbar-icons">
-        <button onClick={toggleDarkMode}>
-          {darkMode ? "🌞 Light Mode" : "🌙 Dark Mode"}
-        </button>
         <button>🔔 Notifications</button>
         <button>⚙️ Settings</button>
         <Link to="/signin" onClick={handleLogout}>
