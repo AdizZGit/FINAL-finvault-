@@ -10,6 +10,7 @@ import CreditCard from "./pages/CreditCard";
 import "./styles.css";
 import AdminLoanPage from "./pages/adminloan";
 import AdminAccounts from "./pages/AdminAccounts";
+import Transactions from "./pages/Transactions";
 
 const App = () => {
   return (
@@ -35,6 +36,7 @@ const App = () => {
                     <Route path="/contacts" element={<div>Contacts Info Page</div>} />
                     <Route path="/creditcard" element={<CreditCard />} />
                     <Route path="/adminloan" element={<AdminLoanPage />} />
+                    <Route path="/Transactions" element={<Transactions />} />
                   </Routes>
                 </div>
               </div>
