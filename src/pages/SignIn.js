@@ -6,11 +6,14 @@ import ReCAPTCHA from "react-google-recaptcha";
 const SignIn = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
+  const [role, setRole] = useState("user"); // State to store selected role
   const [capVal, setCapVal] = useState(null);
 
   const handleSignIn = async (e) => {
     e.preventDefault();
-    console.log(email);
+    console.log("Email:", email);
+    console.log("Role:", role);
+
     // Simulate successful sign-in logic
     console.log("Sign-in successful!");
 
@@ -42,12 +45,23 @@ const SignIn = () => {
               required
             />
           </div>
-
+          <div className="form-group">
+            <label>Role</label>
+            <select
+              value={role}
+              onChange={(e) => setRole(e.target.value)}
+              required
+            >
+              <option value="user">User</option>
+              <option value="admin">Admin</option>
+              <option value="employee">Employee</option>
+            </select>
+          </div>
           <ReCAPTCHA
-  sitekey="6Lcqf44qAAAAAAh7u2ug5Cmc_jts-F1bA6CzkKO6"
-  onChange={(val) => setCapVal(val)}
-  className="recaptcha-container"  // Add class to apply CSS
-/>
+            sitekey="6Lcqf44qAAAAAAh7u2ug5Cmc_jts-F1bA6CzkKO6"
+            onChange={(val) => setCapVal(val)}
+            className="recaptcha-container" // Add class to apply CSS
+          />
 
           <button type="submit" className="auth-btn" disabled={!capVal}>
             Sign In
@@ -63,4 +77,5 @@ const SignIn = () => {
     </div>
   );
 };
+
 export default SignIn;

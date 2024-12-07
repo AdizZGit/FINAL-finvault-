@@ -1,15 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Auth.css";
 
 const SignUp = () => {
   const navigate = useNavigate();
+  const [role, setRole] = useState("user"); // Default role
 
   const handleSignUp = (e) => {
     e.preventDefault();
 
     // Simulate successful sign-up logic
-    console.log("Account created successfully!");
+    console.log("Account created successfully with role:", role);
 
     // Redirect to the dashboard
     navigate("/dashboard");
@@ -32,6 +33,14 @@ const SignUp = () => {
           <div className="form-group">
             <label>Password</label>
             <input type="password" placeholder="Create a password" required />
+          </div>
+          <div className="form-group">
+            <label>Role</label>
+            <select value={role} onChange={(e) => setRole(e.target.value)} required>
+              <option value="user">User</option>
+              <option value="admin">Admin</option>
+              <option value="employee">Employee</option>
+            </select>
           </div>
           <button type="submit" className="auth-btn">Create Account</button>
         </form>
