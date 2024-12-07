@@ -3,6 +3,7 @@
     gap: 20px;
   }
   
+  
   .add-card {
     flex: 1;
     background: white;
@@ -53,4 +54,17 @@
   
   .card-settings ul li:hover {
     color: #007bff;
+  }
+
+
+  .card-settings-1{
+    display: block;
+    background: white;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  .card-settings-1 ul{
+    list-style: none;
   }
