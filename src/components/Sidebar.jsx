@@ -7,7 +7,7 @@ const Sidebar = () => {
   
 
   return (
-    <div className={`sidebar ₹{collapsed ? "collapsed" : ""}`}>
+    <div className={`sidebar ${collapsed ? "collapsed" : ""}`}>
       <div className="sidebar-header">
         <h1 className="logo">{!collapsed}</h1>
         <button className="toggle-btn" onClick={() => setCollapsed(!collapsed)}>
