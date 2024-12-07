@@ -16,7 +16,7 @@ const Sidebar = () => {
       </div>
       <div className="profile">
         <img
-          src="../../assets/logo.avif"
+          src="../../assets/user.jpg"
           alt="User"
           className="profile-pic"
         />
@@ -41,7 +41,7 @@ const Sidebar = () => {
           <Link to="/adminloan">💵 {!collapsed && "Loans"}</Link>
         </li>
         <li>
-          <Link to="">💸 {!collapsed && "Contacts Info"}</Link>
+          <Link to="">💸 {!collapsed && "Investment"}</Link>
         </li>
         <li>
           <Link to="/CreditCard">💰 {!collapsed && "CreditCard"}</Link>
