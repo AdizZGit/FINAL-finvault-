@@ -32,7 +32,7 @@ const Sidebar = () => {
           <Link to="/dashboard">🏦 {!collapsed && "Dashboard"}</Link>
         </li>
         <li>
-          <Link to="/Transactions">📥 {!collapsed && "Transactions"}</Link>
+          <Link to="/AdminTransactions">📥 {!collapsed && "Transactions"}</Link>
         </li>
         <li>
           <Link to="/AdminAccounts">👥 {!collapsed && "Accounts"}</Link>
