@@ -49,7 +49,7 @@ export default function CreditCard() {
               <tr key={app.id}>
                 <td>{app.name}</td>
                 <td>{app.email}</td>
-                <td>₹{app.income.toLocaleString()}</td>
+                <td>₹{app.income}</td>
                 <td>{app.creditScore}</td>
                 <td>{app.status}</td>
                 <td>
