@@ -10,6 +10,7 @@ import UserAccounts from "./pages/UserAccounts";
 import "./styles.css";
 import AdminLoanPage from "./pages/adminloan";
 import AdminAccounts from "./pages/AdminAccounts";
+import PersonalLoan from "./pages/PersonalLoan";
 import Transactions from "./pages/Transactions";
 import AdminTransactions from "./pages/AdminTransactions";
 
@@ -38,6 +39,7 @@ const App = () => {
                     <Route path="/contacts" element={<div>Contacts Info Page</div>} />
                     <Route path="/creditcard" element={<CreditCard />} />
                     <Route path="/adminloan" element={<AdminLoanPage />} />
+                    <Route path="/personalloan" element={<PersonalLoan />} />
                     <Route path="/Transactions" element={<Transactions />} />
                     <Route path="/admin/Transactions" element={<AdminTransactions />} />
                   </Routes>
