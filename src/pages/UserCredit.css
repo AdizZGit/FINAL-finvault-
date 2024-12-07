@@ -1,0 +1,56 @@
+.add-card-settings {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .add-card {
+    flex: 1;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .add-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .add-card input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .add-card button {
+    padding: 10px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .card-settings {
+    flex: 1;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-settings ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .card-settings ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+  }
+  
+  .card-settings ul li:hover {
+    color: #007bff;
+  }
