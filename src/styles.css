@@ -1,148 +1,145 @@
 /* General Styles */
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-  }
-  
-  .app {
-    display: flex;
-    height: 100vh;
-  }
-  
-  /* Main Content */
-  .main-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .content {
-    padding: 20px;
-  }
-  
-  
-  /* Sidebar Styles */
-  .sidebar {
-    height: 100%; /* Ensures the sidebar spans the full height of its parent */
-    width: 250px; /* Sidebar width */
-    background-color: #2c2c54; /* Blue background color */
-    color: white; /* Text color */
-    display: flex;
-    flex-direction: column;
-    transition: width 0.3s ease-in-out; 
-  }
-  
-  
-  .sidebar.collapsed {
-    width: 80px;
-  }
-  
-  .sidebar-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-  }
-  
-  .logo {
-    font-size: 18px;
-  }
-  
-  .toggle-btn {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 20px;
-    cursor: pointer;
-  }
-  
-  .profile {
-    text-align: center;
-    padding: 20px;
-  }
-  
-  .profile-pic {
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-  }
-  
-  .menu {
-    list-style: none;
-    padding: 0;
-    margin: 0;    
-  }
-  
-  .menu li {
-    padding: 15px 20px;
-    cursor: pointer;
-    font-size: larger;
-    
-  }
-  
-  .menu li:hover {
-    background-color: #40407a;
-  }
-  
-  .menu a {
-    text-decoration: none;
-    color: white;
-    display: flex;
-    align-items: center;
-  }
-  
-  /* Topbar Styles */
-  .topbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #2c2c54;
-    color: white;
-    padding: 10px 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  .search-bar {
-    display: flex;
-    align-items: center;
-    background-color: #40407a;
-    padding: 5px 10px;
-    border-radius: 5px;
-  }
-  
-  .search-bar input {
-    border: none;
-    background: none;
-    color: white;
-    outline: none;
-    margin-right: 5px;
-  }
-  
-  .search-bar button {
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-  }
-  
-  .topbar-icons {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .topbar-icons button {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 14px;
-    cursor: pointer;
-    padding: 5px 10px;
-    border-radius: 5px;
-  }
-  
-  .topbar-icons button:hover {
-    background-color: #575fcf;
-  }
-  
-  
-  
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.app {
+  display: flex;
+  height: 100vh;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  padding: 20px;
+}
+
+
+/* Sidebar Styles */
+.sidebar {
+  height: 100%; /* Ensures the sidebar spans the full height of its parent */
+  width: 250px; /* Sidebar width */
+  background-color: #2c2c54; /* Blue background color */
+  color: white; /* Text color */
+  display: flex;
+  flex-direction: column;
+  transition: width 0.3s ease-in-out; 
+}
+
+
+.sidebar.collapsed {
+  width: 80px;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.logo {
+  font-size: 18px;
+}
+
+.toggle-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.profile {
+  text-align: center;
+  padding: 20px;
+}
+
+.profile-pic {
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  padding: 15px 20px;
+  cursor: pointer;
+}
+
+.menu li:hover {
+  background-color: #40407a;
+}
+
+.menu a {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+/* Topbar Styles */
+.topbar {
+display: flex;
+justify-content: space-between;
+align-items: center;
+background-color: #2c2c54;
+color: white;
+padding: 10px 20px;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar {
+display: flex;
+align-items: center;
+background-color: #40407a;
+padding: 5px 10px;
+border-radius: 5px;
+}
+
+.search-bar input {
+border: none;
+background: none;
+color: white;
+outline: none;
+margin-right: 5px;
+}
+
+.search-bar button {
+background: none;
+border: none;
+color: white;
+cursor: pointer;
+}
+
+.topbar-icons {
+display: flex;
+gap: 10px;
+}
+
+.topbar-icons button {
+background: none;
+border: none;
+color: white;
+font-size: 14px;
+cursor: pointer;
+padding: 5px 10px;
+border-radius: 5px;
+}
+
+.topbar-icons button:hover {
+background-color: #575fcf;
+}
+
+
