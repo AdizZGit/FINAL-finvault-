@@ -107,13 +107,13 @@ const Transactions = () => {
                 <tr key={transaction.id}>
                   <td>{transaction.id}</td>
                   <td>{transaction.name}</td>
-                  <td>{`₹${transaction.amount.toLocaleString()}`}</td>
+                  <td>{`₹₹{transaction.amount.toLocaleString()}`}</td>
                   <td className={transaction.status === 'Completed' ? 'text-success' : 'text-danger'}>
                     {transaction.status}
                   </td>
                   <td>{transaction.date}</td>
                   <td>
-                    <a href={`/attachments/${transaction.attachment}`} target="_blank" rel="noopener noreferrer">
+                    <a href={`/attachments/₹{transaction.attachment}`} target="_blank" rel="noopener noreferrer">
                       Receipt
                     </a>
                   </td>
