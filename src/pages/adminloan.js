@@ -2,11 +2,10 @@ import React, { useState } from "react";
 import "./adminloan.css"; // Import the CSS file
 
 const AdminLoanPage = () => {
-  // Sample data for loans
+  // Sample data for loans, including loan amount and account number
   const [loans, setLoans] = useState([
-    { id: 1, type: "Personal Loan", duration: "8 Months", interestRate: 12, isCleared: false, status: "Pending" },
-    { id: 2, type: "Education Loan", duration: "8 Months", interestRate: 10, isCleared: true, status: "Pending" },
-  
+    { id: "1", accountNumber: "123-456-789", type: "Personal Loan", loanAmount: "$30,000", duration: "8 Months", interestRate: 12, isCleared: false, status: "Pending" },
+    { id: "2", accountNumber: "999-654-321", type: "Education Loan", loanAmount: "$15,000", duration: "8 Months", interestRate: 10, isCleared: true, status: "Pending" },
   ]);
 
   // Function to handle approval
@@ -33,24 +32,26 @@ const AdminLoanPage = () => {
       <table className="admin-loan-table">
         <thead>
           <tr>
-            <th>Account Number</th>
+            <th>Serial No</th> {/* New Serial No column */}
+            <th>Account Number</th> {/* New Account Number column */}
             <th>Loan Type</th>
+            <th>Loan Amount</th> {/* Loan Amount column */}
             <th>Duration</th>
             <th>Interest Rate</th>
-           
             <th>Action</th>
           </tr>
         </thead>
         <tbody>
-          {loans.map((loan) => (
+          {loans.map((loan, index) => (
             <tr key={loan.id}>
-              <td>{loan.id}</td>
+              <td>{index + 1}</td> {/* Dynamically display serial number */}
+              <td>{loan.accountNumber}</td> {/* Display Account Number */}
               <td>{loan.type}</td>
+              <td>{loan.loanAmount}</td>
               <td>{loan.duration}</td>
               <td>{loan.interestRate}%</td>
-             
               <td>
-                {loan.status === "Pending" && (
+                {loan.status === "Pending" ? (
                   <>
                     <button
                       onClick={() => handleApprove(loan.id)}
@@ -65,9 +66,9 @@ const AdminLoanPage = () => {
                       Reject
                     </button>
                   </>
+                ) : (
+                  <span>{loan.status}</span>
                 )}
-                {loan.status === "Approved" && <span>Approved</span>}
-                {loan.status === "Rejected" && <span>Rejected</span>}
               </td>
             </tr>
           ))}

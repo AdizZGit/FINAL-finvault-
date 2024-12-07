@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // To handle navigation
+import { Link } from "react-router-dom"; // Removed 'useNavigate'
 import "../styles.css"; // Ensure the correct path to your styles.css
 
 const Topbar = ({ onLogout }) => {
   const [darkMode, setDarkMode] = useState(false);
-  const navigate = useNavigate();
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
@@ -12,8 +11,10 @@ const Topbar = ({ onLogout }) => {
   };
 
   const handleLogout = () => {
-    onLogout(); // Call the logout function passed from the parent
-    navigate("/signin"); // Redirect to the signin page
+    if (onLogout) {
+      onLogout(); // Call logout logic passed as a prop
+    }
+    console.log("User logged out"); // Additional logout logic can go here
   };
 
   return (
@@ -31,7 +32,9 @@ const Topbar = ({ onLogout }) => {
         </button>
         <button>🔔 Notifications</button>
         <button>⚙️ Settings</button>
-        <button onClick={handleLogout}>👤 Logout</button>
+        <Link to="/signin" onClick={handleLogout}>
+          <button>👤 Logout</button>
+        </Link>
       </div>
     </div>
   );
