@@ -13,6 +13,7 @@ import AdminAccounts from "./pages/AdminAccounts";
 import PersonalLoan from "./pages/PersonalLoan";
 import Transactions from "./pages/Transactions";
 import AdminTransactions from "./pages/AdminTransactions";
+import UserCredit from "./pages/UserCredit";
 
 const App = () => {
   return (
@@ -42,6 +43,7 @@ const App = () => {
                     <Route path="/personalloan" element={<PersonalLoan />} />
                     <Route path="/Transactions" element={<Transactions />} />
                     <Route path="/adminTransactions" element={<AdminTransactions />} />
+                    <Route path="/UserCredit" element={<UserCredit />} />
                   </Routes>
                 </div>
               </div>
