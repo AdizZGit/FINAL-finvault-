@@ -6,7 +6,7 @@ import Sidebar from "./components/Sidebar";
 import Topbar from "./components/Topbar";
 import Dashboard from "./pages/Dashboard";
 import CreditCard from "./pages/CreditCard";
-// import Accounts from "./pages/Accounts";
+import UserAccounts from "./pages/UserAccounts";
 import "./styles.css";
 import AdminLoanPage from "./pages/adminloan";
 import AdminAccounts from "./pages/AdminAccounts";
@@ -33,6 +33,7 @@ const App = () => {
                   <Routes>
                     <Route path="/dashboard" element={<Dashboard />} />
                     <Route path="/adminaccounts" element={<AdminAccounts />} />
+                    <Route path="/userAccounts" element={<UserAccounts />} />
                     <Route path="/contacts" element={<div>Contacts Info Page</div>} />
                     <Route path="/creditcard" element={<CreditCard />} />
                     <Route path="/adminloan" element={<AdminLoanPage />} />

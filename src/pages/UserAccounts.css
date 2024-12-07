@@ -1,0 +1,171 @@
+.accounts-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f5f7fa;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .controls input {
+    padding: 8px;
+    font-size: 16px;
+    width: 60%;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+  }
+  
+  .controls select {
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+  }
+  
+  @media (max-width: 768px) {
+    .controls input {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  
+    .controls select {
+      width: 100%;
+    }
+  }
+  
+  .accounts-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .account-card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: calc(33.33% - 20px);
+    box-sizing: border-box;
+    transition: transform 0.2s;
+  }
+  
+  .account-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .account-card h3 {
+    margin-bottom: 10px;
+    color: #007bff;
+  }
+  
+  .account-card p {
+    margin-bottom: 8px;
+    color: #555;
+  }
+  
+  .account-card .balance {
+    font-weight: bold;
+    color: #28a745;
+  }
+  
+  .account-card .recent-activity {
+    font-style: italic;
+    color: #777;
+  }
+  
+  .actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .view-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .delete-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .add-account {
+    margin-top: 30px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .add-account h2 {
+    margin-bottom: 15px;
+  }
+  
+  .add-account input,
+  .add-account select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .add-account button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 1024px) {
+    .account-card {
+      width: calc(50% - 20px);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .account-card {
+      width: calc(100% - 20px);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .controls {
+      flex-direction: column;
+    }
+  
+    .controls select {
+      margin-top: 10px;
+    }
+  
+    .account-card {
+      padding: 15px;
+    }
+  
+    .add-account {
+      padding: 15px;
+    }
+  }
+  
