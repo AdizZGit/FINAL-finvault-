@@ -5,23 +5,23 @@ const AdminAccounts = () => {
   const [accounts, setAccounts] = useState([
     {
       id: 1,
-      name: "John Doe",
+      name: "Naresh",
       accountNumber: "1234 **** **** 5678",
       balance: 15250,
       type: "Savings",
-      recentActivity: "Deposited $500 on 01 Dec 2024",
+      recentActivity: "Deposited ₹500 on 01 Dec 2024",
     },
     {
       id: 2,
-      name: "Jane Smith",
+      name: "Chetan",
       accountNumber: "9876 **** **** 5432",
       balance: 3200,
       type: "Checking",
-      recentActivity: "Withdrawn $150 on 30 Nov 2024",
+      recentActivity: "Withdrawn ₹150 on 30 Nov 2024",
     },
     {
       id: 3,
-      name: "ACME Corp",
+      name: "Rushikesh",
       accountNumber: "4567 **** **** 8901",
       balance: 25000,
       type: "Business",
