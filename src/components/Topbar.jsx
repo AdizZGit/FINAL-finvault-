@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom"; // To handle navigation
+import { Link } from "react-router-dom"; // Removed 'useNavigate'
 import "../styles.css"; // Ensure the correct path to your styles.css
 
 const Topbar = ({ onLogout }) => {
   const [darkMode, setDarkMode] = useState(false);
-  const navigate = useNavigate();
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
