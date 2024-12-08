@@ -8,6 +8,7 @@ const SignUp = () => {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState(""); // State to store error message
 
   const handleSignUp = async (e) => {
     e.preventDefault();
@@ -20,7 +21,7 @@ const SignUp = () => {
     };
 
     try {
-      const response = await fetch("http://localhost:8080/signup", {
+      const response = await fetch("http://localhost:8080/users/signup", { // Make sure the URL is correct
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -30,13 +31,15 @@ const SignUp = () => {
 
       if (response.ok) {
         alert("Account created successfully!");
-        navigate("/dashboard");
+        navigate("/signin"); // Redirect to sign in page after successful signup
       } else {
         const errorMessage = await response.text();
-        alert(`Error: ${errorMessage}`);
+        setError(`Error: ${errorMessage}`);
+        alert(`Error: ${errorMessage}`); // Display error message from server
       }
     } catch (error) {
       console.error("Error during sign-up:", error);
+      setError("An error occurred while creating the account.");
       alert("An error occurred while creating the account.");
     }
   };
@@ -47,6 +50,7 @@ const SignUp = () => {
         <h2>Create Account</h2>
         <p>Sign up to get started</p>
         <form onSubmit={handleSignUp}>
+          {error && <p className="error-message">{error}</p>} {/* Display error message */}
           <div className="form-group">
             <label>Full Name</label>
             <input
