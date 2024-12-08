@@ -1,33 +1,9 @@
-import React, { useState } from "react";
-import "./UserAccounts.css"; // Correct CSS path
+import React, { useState, useEffect } from "react";
+import "./UserAccounts.css"; 
+import axios from "axios"; // For making HTTP requests
 
 const UserAccounts = () => {
-  const [accounts, setAccounts] = useState([
-    {
-      id: 1,
-      name: "Savings Account",
-      accountNumber: "1234 **** **** 5678",
-      balance: 15250,
-      type: "Savings",
-      recentActivity: "Deposited $500 on 01 Dec 2024",
-    },
-    {
-      id: 2,
-      name: "Checking Account",
-      accountNumber: "9876 **** **** 5432",
-      balance: 3200,
-      type: "Checking",
-      recentActivity: "Withdrawn $150 on 30 Nov 2024",
-    },
-    {
-      id: 3,
-      name: "Business Account",
-      accountNumber: "4567 **** **** 8901",
-      balance: 25000,
-      type: "Business",
-      recentActivity: "Transfer $1,000 on 28 Nov 2024",
-    },
-  ]);
+  const [accounts, setAccounts] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [sortOption, setSortOption] = useState("name");
   const [newAccount, setNewAccount] = useState({
@@ -37,6 +13,20 @@ const UserAccounts = () => {
     type: "",
     recentActivity: "",
   });
+
+  // Fetch accounts from the backend on component mount
+  useEffect(() => {
+    fetchAccounts();
+  }, []);
+
+  const fetchAccounts = async () => {
+    try {
+      const response = await axios.get("http://localhost:8080/UserAccounts");
+      setAccounts(response.data);
+    } catch (error) {
+      console.error("Error fetching accounts:", error);
+    }
+  };
 
   // Filter and Sort Accounts
   const filteredAccounts = accounts
@@ -50,23 +40,34 @@ const UserAccounts = () => {
     );
 
   // Add New Account
-  const handleAddAccount = () => {
-    setAccounts([
-      ...accounts,
-      {
+  const handleAddAccount = async () => {
+    try {
+      const response = await axios.post("http://localhost:8080/UserAccounts", {
         ...newAccount,
-        id: accounts.length + 1,
         balance: parseFloat(newAccount.balance),
         recentActivity: "New account added",
-      },
-    ]);
-    setNewAccount({
-      name: "",
-      accountNumber: "",
-      balance: 0,
-      type: "",
-      recentActivity: "",
-    });
+      });
+      setAccounts([...accounts, response.data]);
+      setNewAccount({
+        name: "",
+        accountNumber: "",
+        balance: 0,
+        type: "",
+        recentActivity: "",
+      });
+    } catch (error) {
+      console.error("Error adding account:", error);
+    }
+  };
+
+  // Delete Account
+  const handleDeleteAccount = async (id) => {
+    try {
+      await axios.delete(`http://localhost:8080/UserAccounts/${id}`);
+      setAccounts(accounts.filter((account) => account.id !== id));
+    } catch (error) {
+      console.error("Error deleting account:", error);
+    }
   };
 
   return (
@@ -97,7 +98,9 @@ const UserAccounts = () => {
             <p className="recent-activity">{account.recentActivity}</p>
             <div className="actions">
               <button className="view-btn">View Details</button>
-              <button className="delete-btn">Delete</button>
+              <button className="delete-btn" onClick={() => handleDeleteAccount(account.id)}>
+                Delete
+              </button>
             </div>
           </div>
         ))}
@@ -110,31 +113,23 @@ const UserAccounts = () => {
           type="text"
           placeholder="Account Name"
           value={newAccount.name}
-          onChange={(e) =>
-            setNewAccount({ ...newAccount, name: e.target.value })
-          }
+          onChange={(e) => setNewAccount({ ...newAccount, name: e.target.value })}
         />
         <input
           type="text"
           placeholder="Account Number"
           value={newAccount.accountNumber}
-          onChange={(e) =>
-            setNewAccount({ ...newAccount, accountNumber: e.target.value })
-          }
+          onChange={(e) => setNewAccount({ ...newAccount, accountNumber: e.target.value })}
         />
         <input
           type="number"
           placeholder="Balance"
           value={newAccount.balance}
-          onChange={(e) =>
-            setNewAccount({ ...newAccount, balance: e.target.value })
-          }
+          onChange={(e) => setNewAccount({ ...newAccount, balance: e.target.value })}
         />
         <select
           value={newAccount.type}
-          onChange={(e) =>
-            setNewAccount({ ...newAccount, type: e.target.value })
-          }
+          onChange={(e) => setNewAccount({ ...newAccount, type: e.target.value })}
         >
           <option value="">Select Account Type</option>
           <option value="Savings">Savings</option>
