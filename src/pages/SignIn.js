@@ -6,19 +6,34 @@ import ReCAPTCHA from "react-google-recaptcha";
 const SignIn = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [role, setRole] = useState("user"); // State to store selected role
   const [capVal, setCapVal] = useState(null);
 
   const handleSignIn = async (e) => {
     e.preventDefault();
-    console.log("Email:", email);
-    console.log("Role:", role);
 
-    // Simulate successful sign-in logic
-    console.log("Sign-in successful!");
+    try {
+      const response = await fetch("http://localhost:8080/signin", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password, role }),
+      });
 
-    // Redirect to the dashboard
-    navigate("/dashboard");
+      if (response.ok) {
+        console.log("Sign-in successful!");
+        alert("Sign-in successful!");
+        navigate("/dashboard");
+      } else {
+        const errorMessage = await response.text();
+        alert(`Error: ${errorMessage}`);
+      }
+    } catch (error) {
+      console.error("Error during sign-in:", error);
+      alert("An error occurred while signing in.");
+    }
   };
 
   return (
@@ -42,6 +57,8 @@ const SignIn = () => {
             <input
               type="password"
               placeholder="Enter your password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               required
             />
           </div>
