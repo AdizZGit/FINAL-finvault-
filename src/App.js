@@ -15,13 +15,14 @@ import PersonalLoan from "./pages/PersonalLoan";
 import Transactions from "./pages/Transactions";
 import AdminTransactions from "./pages/AdminTransactions";
 import UserCredit from "./pages/UserCredit";
+import Home from "./pages/home";
 
 const App = () => {
   return (
     <Router>
       <Routes>
-        {/* Redirect root path to /signin */}
-        <Route path="/" element={<Navigate to="/signin" />} />
+        {/* Redirect root path to Home page */}
+        <Route path="/home" element={<Home />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
         

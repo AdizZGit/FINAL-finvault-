@@ -1,0 +1,42 @@
+/* src/styles/Home.css */
+.home-container {
+    font-family: Arial, sans-serif;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #dc5c5c;
+    color: white;
+  }
+  
+  .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .navbar-links a {
+    margin-left: 15px;
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+  
+  .hero-section {
+    margin-top: 50px;
+    padding: 40px;
+  }
+  
+  .hero-image {
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .get-started-btn {
+    background-color: #002b5b;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1
+  }
