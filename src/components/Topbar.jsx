@@ -25,6 +25,9 @@ const Topbar = ({ onLogout }) => {
         <Link to="/signin" onClick={handleLogout}>
           <button>👤 Logout</button>
         </Link>
+        <Link to="/home" onClick={handleLogout}>
+          <button>🏠 Home</button>
+        </Link>
       </div>
     </div>
   );
