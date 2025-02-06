@@ -29,9 +29,9 @@ const Home = () => {
             />
           </Col>
           <Col md={6}>
-            <h1>Welcome to MINIBANK</h1>
+            <h1>Welcome to FINVAULT</h1>
             <p>
-              At MINIBANK, we prioritize your financial success. Our bank offers a
+              At FINVAULT, we prioritize your financial success. Our bank offers a
               wide range of services tailored to meet your needs, including
               savings accounts, loans, and investment options. With
               state-of-the-art security and a customer-first approach, we ensure
