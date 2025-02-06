@@ -22,6 +22,7 @@ const App = () => {
     <Router>
       <Routes>
         {/* Redirect root path to Home page */}
+        <Route path="/" element={<Navigate to="/home" />} />
         <Route path="/home" element={<Home />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
