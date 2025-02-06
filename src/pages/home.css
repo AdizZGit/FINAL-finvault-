@@ -1,42 +1,92 @@
 /* src/styles/Home.css */
 .home-container {
     font-family: Arial, sans-serif;
-  }
-  
-  .navbar {
+}
+
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 30px;
     background-color: #dc5c5c;
     color: white;
-  }
-  
-  .navbar-brand {
+}
+
+.navbar-brand {
     font-size: 1.5rem;
     font-weight: bold;
-  }
-  
-  .navbar-links a {
+}
+
+.navbar-links a {
     margin-left: 15px;
     color: white;
     text-decoration: none;
     font-size: 1rem;
-  }
-  
-  .hero-section {
+}
+
+.hero-section {
     margin-top: 50px;
     padding: 40px;
-  }
-  
-  .hero-image {
+}
+
+.hero-image {
     width: 100%;
     max-width: 500px;
-  }
-  
-  .get-started-btn {
+}
+
+.get-started-btn {
     background-color: #002b5b;
     border: none;
     padding: 10px 20px;
-    font-size: 1
-  }
+    font-size: 1rem;
+    color: white;
+    cursor: pointer;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+.get-started-btn:hover {
+    background-color: #004080;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    border-top: 1px solid #ddd;
+    font-size: 0.9rem;
+}
+
+.footer a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .navbar-links {
+        margin-top: 10px;
+    }
+
+    .hero-section {
+        padding: 20px;
+    }
+
+    .hero-image {
+        max-width: 100%;
+    }
+
+    .get-started-btn {
+        width: 100%;
+        padding: 12px;
+    }
+}

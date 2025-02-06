@@ -16,14 +16,14 @@ const Home = () => {
           <a onClick={() => navigate("/signin")} style={{ cursor: "pointer" }}>Login</a>
           <a onClick={() => navigate("/signup")} style={{ cursor: "pointer" }}>Signup</a>
           <a href="#privacy">Privacy</a>
-          <a href="#logout">Logout</a>
+          <a onClick={() => navigate("/")} style={{ cursor: "pointer" }}>Logout</a>
         </div>
       </nav>
       <Container className="hero-section text-center">
         <Row className="align-items-center">
-          <Col md={6}>
+        <Col md={6}>
             <img
-              src="https://www.shutterstock.com/image-vector/bank-finance-building-money-cash-260nw-2263298005.jpg"
+              src="/assets/bank.jpeg"
               alt="Bank Illustration"
               className="hero-image"
             />
