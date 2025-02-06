@@ -22,7 +22,7 @@ const Sidebar = () => {
         />
         {!collapsed && (
           <div>
-            <h2>Chetan</h2>
+            <h2>User</h2>
             <p>Admin</p>
           </div>
         )}
