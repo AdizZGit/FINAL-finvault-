@@ -22,11 +22,8 @@ const Home = () => {
       <Container className="hero-section text-center">
         <Row className="align-items-center">
           <Col md={6}>
-            <img
-              src="https://www.shutterstock.com/image-vector/bank-finance-building-money-cash-260nw-2263298005.jpg"
-              alt="Bank Illustration"
-              className="hero-image"
-            />
+          <img src="/assets/bank.jpeg" alt="Bank Illustration" className="hero-image" />
+
           </Col>
           <Col md={6}>
             <h1>Welcome to MINIBANK</h1>
