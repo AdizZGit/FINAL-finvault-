@@ -23,7 +23,6 @@ const Home = () => {
         <Row className="align-items-center">
         <Col md={6}>
             <img
-              src="https://www.shutterstock.com/ima"
               src="/assets/bank.jpeg"
               alt="Bank Illustration"
               className="hero-image"
