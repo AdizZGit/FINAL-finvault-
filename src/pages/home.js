@@ -21,9 +21,9 @@ const Home = () => {
       </nav>
       <Container className="hero-section text-center">
         <Row className="align-items-center">
-        <Col md={6}>
+          <Col md={6}>
             <img
-              src="/assets/bank.jpeg"
+              src="https://www.shutterstock.com/image-vector/bank-finance-building-money-cash-260nw-2263298005.jpg"
               alt="Bank Illustration"
               className="hero-image"
             />
