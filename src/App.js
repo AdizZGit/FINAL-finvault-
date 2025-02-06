@@ -16,6 +16,7 @@ import Transactions from "./pages/Transactions";
 import AdminTransactions from "./pages/AdminTransactions";
 import UserCredit from "./pages/UserCredit";
 import Home from "./pages/home";
+import Privacy from "./pages/privacy";
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
         {/* Redirect root path to Home page */}
         <Route path="/" element={<Navigate to="/home" />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/privacy" element={<Privacy />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
         
@@ -48,6 +50,7 @@ const App = () => {
                     <Route path="/Transactions" element={<Transactions />} />
                     <Route path="/adminTransactions" element={<AdminTransactions />} />
                     <Route path="/UserCredit" element={<UserCredit />} />
+                    
                   </Routes>
                 </div>
               </div>
